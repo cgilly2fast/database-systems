@@ -1,0 +1,13 @@
+Q1(eid, name):- Manager(eid,A), Manager(eid,B), Employee(eid, name, _);
+
+Q2(eid, name):- not Manager(eid,_), Employee(eid, name,_);
+
+Q3(office):- Employee(eidA,'Alice', _), Manager(eidA, mid), Employee(mid,_, office);
+
+--q4
+
+emp(eid, mid):- Manager(did, mid)
+
+Q4(mid, name, office):- Manager(eid, mid), Employee(eid, name, office)
+
+Q5(mid2, name):- Manager(_, mid), Manager(mid, mid2), Employee(mid2, name,_);
